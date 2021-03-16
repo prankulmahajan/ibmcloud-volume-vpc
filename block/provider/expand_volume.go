@@ -1,5 +1,5 @@
 /**
- * Copyright 2020 IBM Corp.
+ * Copyright 2021 IBM Corp.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,7 +65,7 @@ func (vpcs *VPCSession) ExpandVolume(expandVolumeRequest provider.ExpandVolumeRe
 
 	if err != nil {
 		vpcs.Logger.Debug("Failed to expand volume from VPC provider", zap.Reflect("BackendError", err))
-		return -1, userError.GetUserError("FailedToPlaceOrder", err)
+		return -1, userError.GetUserError("FailedToExpandVolume", err)
 	}
 
 	vpcs.Logger.Info("Successfully accepted volume expansion request, now waiting for volume state equal to available")
