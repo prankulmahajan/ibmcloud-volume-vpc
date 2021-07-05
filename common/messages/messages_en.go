@@ -30,6 +30,20 @@ var messagesEn = map[string]util.Message{
 		RC:          400,
 		Action:      "Verify that you entered the correct IBM Cloud user name and password. If the error persists, the authentication service might be unavailable. Wait a few minutes and try again. ",
 	},
+	"EndpointNotReachable": {
+		Code:        "EndpointNotReachable",
+		Description: "Indicates IAM TOKEN exchange request failed.",
+		Type:        util.FailedAccessToken,
+		RC:          500,
+		Action:      "Verify the token_exchange_endpoint.",
+	},
+	"Timeout": {
+		Code:        "Timeout",
+		Description: "Timeout reaching to exchnage endpoint url",
+		Type:        util.FailedAccessToken,
+		RC:          503,
+		Action:      "Wait for a few mninutes and try again.",
+	},
 	"ErrorRequiredFieldMissing": {
 		Code:        "ErrorRequiredFieldMissing",
 		Description: "[%s] is required to complete the operation.",
