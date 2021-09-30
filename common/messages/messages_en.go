@@ -32,17 +32,17 @@ var messagesEn = map[string]util.Message{
 	},
 	"EndpointNotReachable": {
 		Code:        "EndpointNotReachable",
-		Description: "Indicates IAM TOKEN exchange request failed.",
+		Description: "IAM TOKEN exchange request failed.",
 		Type:        util.FailedAccessToken,
 		RC:          500,
-		Action:      "Verify the token_exchange_endpoint.",
+		Action:      "Verify that iks_token_exchange_endpoint_private_url is reachable from the cluster. You can find this url by running 'kubectl get secret storage-secret-storage -n kube-system'.",
 	},
 	"Timeout": {
 		Code:        "Timeout",
-		Description: "Timeout reaching to exchnage endpoint url",
+		Description: "IAM Token exchange endpoint is not reachable.",
 		Type:        util.FailedAccessToken,
 		RC:          503,
-		Action:      "Wait for a few mninutes and try again.",
+		Action:      "Wait for a few mninutes and try again. If the error persists user can open a container network issue.",
 	},
 	"ErrorRequiredFieldMissing": {
 		Code:        "ErrorRequiredFieldMissing",
